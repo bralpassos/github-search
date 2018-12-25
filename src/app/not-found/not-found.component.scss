@@ -1,0 +1,27 @@
+$lighter-purple: #ac53f2;
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+
+    app-search {
+        padding: 1em;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    h1 {
+        margin-top: 2em;
+        font-family: Raleway;
+        font-size: 40px;
+        font-style: normal;
+        text-align: center;
+        color: $lighter-purple;
+    }
+}

@@ -4,7 +4,7 @@ $lighter-purple: #ac53f2;
     display: flex;
     flex-direction: row;
 
-    .input {
+    input {
         width: 600px;
         height: 30x;
         padding: 5px 15px;
@@ -13,11 +13,11 @@ $lighter-purple: #ac53f2;
         background-color: white;
     }
     
-    .button {
+    button {
         cursor: pointer;
-        padding: 5px;
         width: 100px;
         height: 50px;
+        padding: 5px;
         border-radius: 2px;
         background-color: $lighter-purple;
     }

@@ -1,6 +1,6 @@
-<form (ngSubmit)="searchByUsername()" class="search">
-  <input type="text" class="input" />
-  <button type="submit" class="button">
-    <img src="assets/search.svg" />
+<form [formGroup]="form" (ngSubmit)="searchGithubProfile()" class="search">
+  <input type="text" formControlName="username" />
+  <button type="submit">
+    <img src="assets/search.svg" alt="Search" />
   </button>
 </form>
