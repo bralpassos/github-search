@@ -1,0 +1,24 @@
+$lighter-purple: #ac53f2;
+
+.search {
+    display: flex;
+    flex-direction: row;
+
+    .input {
+        width: 600px;
+        height: 30x;
+        padding: 5px 15px;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        background-color: white;
+    }
+    
+    .button {
+        cursor: pointer;
+        padding: 5px;
+        width: 100px;
+        height: 50px;
+        border-radius: 2px;
+        background-color: $lighter-purple;
+    }
+}
