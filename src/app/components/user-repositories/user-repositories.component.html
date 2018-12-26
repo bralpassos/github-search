@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let repository of repositories">
+    <h1>{{ repository.name }}</h1>
+    <p class="description">{{ repository.description }}</p>
+    <p class="stars">
+      <app-icon name="stars"></app-icon>
+      <span>{{ repository.size }}</span>
+    </p>
+  </li>
+</ul>

@@ -9,10 +9,17 @@ import { GithubUser } from '../models/github-user.model';
 
 export class GithubService {
 
-   constructor (private http: HttpClient) {}
+  private profile: GithubUser;
 
-   searchByUsername(username: string): Observable<GithubUser> {
-     const url = `https://api.github.com/users/${username}`;
-     return this.http.get<GithubUser>(url);
-   }
+  constructor (private http: HttpClient) {}
+
+  searchUser(username: string): Observable<GithubUser> {
+    const url = `https://api.github.com/users/${username}`;
+    return this.http.get<GithubUser>(url);
+  }
+
+  searchRepositories(username: string): Observable<GithubUser> {
+    const url = `https://api.github.com/users/${username}/repos`;
+    return this.http.get<GithubUser>(url);
+  }
 }

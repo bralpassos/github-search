@@ -1,4 +1,4 @@
-$lighter-purple: #ac53f2;
+@import '../../../colors.scss';
 
 .search {
     display: flex;
@@ -14,11 +14,12 @@ $lighter-purple: #ac53f2;
     }
     
     button {
-        cursor: pointer;
         width: 100px;
         height: 50px;
         padding: 5px;
+        border: none;
         border-radius: 2px;
         background-color: $lighter-purple;
+        cursor: pointer;
     }
 }

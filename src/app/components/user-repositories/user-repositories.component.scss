@@ -1,0 +1,35 @@
+$lighter-purple: #ac53f2;
+
+h1 {
+    margin: 0;
+    font-family: Raleway;
+    font-weight: lighter;
+    font-size: 35px;
+    color: $lighter-purple;
+}
+
+p {
+    font-family: Raleway;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 2em;
+}
+
+.description {
+    margin-top: 5px;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-left: 5px;
+    }
+}

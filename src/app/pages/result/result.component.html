@@ -1,0 +1,10 @@
+<div class="page">
+  <header class="search-bar">
+    <app-logo></app-logo>
+    <app-search></app-search>
+  </header>
+  <main class="result">
+    <app-user-info [user]="user" [repositories]="repositories"></app-user-info>
+    <app-user-repositories [repositories]="repositories"></app-user-repositories>
+  </main>
+</div>

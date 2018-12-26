@@ -1,3 +1,7 @@
 export class GithubUser {
-    username: string;
+    name: string;
+    login: string;
+    company: string;
+    location: string;
+    followers: string;
 }

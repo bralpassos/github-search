@@ -1,0 +1,22 @@
+<img class="user-image" src="{{ user.avatar_url }}" />
+<h1>{{ user.name }}</h1>
+<p>{{ user.login }}</p>
+
+<ul>
+  <li class="user-stats" *ngIf="user.location.company">
+    <app-icon name="organization"></app-icon>
+    <span>{{ user.company }}</span>
+  </li>
+  <li class="user-stats" *ngIf="user.location.length">
+    <app-icon name="location"></app-icon>
+    <span>{{ user.location }}</span>
+  </li>
+  <li class="user-stats">
+    <app-icon name="repositories"></app-icon>
+    <span>{{ repositories.length }}</span>
+  </li>
+  <li class="user-stats">
+    <app-icon name="followers"></app-icon>
+    <span>{{ user.followers }}</span>
+  </li>
+</ul>

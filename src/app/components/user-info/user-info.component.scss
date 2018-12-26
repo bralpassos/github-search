@@ -1,0 +1,31 @@
+@import '../../../colors';
+
+h1 {
+    font-family: Raleway;
+    font-weight: lighter;
+    margin: 10px 0;
+}
+
+p {
+    color: $brownish-grey;
+}
+
+ul {
+    padding: 0;
+}
+
+.user-image {
+    width: 280px;
+    height: 280px;
+}
+
+.user-stats {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    app-icon {
+        align-self: center;
+        margin: 0 5px;
+    }
+}

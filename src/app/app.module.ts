@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchComponent } from './search/search.component';
-import { ResultComponent } from './result/result.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { LogoComponent } from './logo/logo.component';
+import { StorageServiceModule} from 'angular-webstorage-service';
+import { SearchComponent } from './components/search/search.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { UserRepositoriesComponent } from './components/user-repositories/user-repositories.component';
+import { IconComponent } from './components/icon/icon.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { ResultComponent } from './pages/result/result.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,14 +27,18 @@ const routes: Routes = [
     ResultComponent,
     HomeComponent,
     NotFoundComponent,
-    LogoComponent
+    LogoComponent,
+    UserInfoComponent,
+    UserRepositoriesComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+}
+
+header, main {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+header {
+    app-search {
+        padding: 1em;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+main {
+    app-user-info {
+        margin-top: 1em;
+    }
+}
