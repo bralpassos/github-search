@@ -21,11 +21,11 @@ export class GithubStoreService {
     return this.storageUser;
   }
 
-  saveRepo(repo: GithubUserRepositories) {
+  saveRepository(repo: GithubUserRepositories) {
     this.storageUserRepo = repo;
   }
 
-  getUserRepo(): GithubUserRepositories {
+  getUserRepository(): GithubUserRepositories {
     return this.storageUserRepo;
   }
 }

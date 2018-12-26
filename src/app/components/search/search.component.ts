@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { GithubUser } from '../../models/github-user.model';
@@ -47,9 +47,9 @@ export class SearchComponent {
   }
 
   showProfilePage(repositories) {
+    this.githubStoreService.saveRepository(repositories);
+    this.router.navigate([`/result/${this.form.value.username}`]);
     this.loading = false;
-    this.githubStoreService.saveRepo(repositories);
-    this.router.navigate(['/result']);
   }
 
   showErrorPage() {

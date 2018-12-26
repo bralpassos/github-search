@@ -15,7 +15,7 @@ export class UserInfoComponent {
 
   constructor() { }
 
-  showProperty(element: object, prop: string) {
+  showProperty(element, prop: string) {
     return element.hasOwnProperty(name);
   }
 

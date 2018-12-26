@@ -16,8 +16,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'result', component: ResultComponent },
   { path: '404', component: NotFoundComponent },
+  { path: 'result/:username', component: ResultComponent },
 ];
 
 @NgModule({

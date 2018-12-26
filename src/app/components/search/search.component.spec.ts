@@ -57,9 +57,9 @@ describe('SearchComponent', () => {
       expect(component.loading).toBe(false);
     })
     
-    it('should redirect to "/result" page', () => {
+    it('should redirect to "/result/" page', () => {
       component.showProfilePage(repositoriesMock);
-      expect(navigateSpy).toHaveBeenCalledWith(['/result']);
+      expect(navigateSpy).toHaveBeenCalledWith(['/result/']);
     })
   });
 
