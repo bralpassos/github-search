@@ -1,5 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { StorageService, SESSION_STORAGE } from 'angular-webstorage-service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +6,8 @@ import { StorageService, SESSION_STORAGE } from 'angular-webstorage-service';
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor(@Inject(SESSION_STORAGE) private storage: StorageService) {  }
-
-  ngOnInit() {
-    this.storage.remove("github_user");
-    this.storage.remove("github_repositories");
-  }
+  constructor() {  }
 
 }

@@ -6,7 +6,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LoadingComponent } from 'src/app/components/loading/loading.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SESSION_STORAGE } from 'angular-webstorage-service';
 
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
@@ -14,9 +13,6 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [
-        { provide: SESSION_STORAGE, useValue: {} },
-      ],
       imports: [
         HttpClientModule,
         RouterTestingModule,

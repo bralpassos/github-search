@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { SearchComponent } from 'src/app/components/search/search.component';
 import { LoadingComponent } from 'src/app/components/loading/loading.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SESSION_STORAGE, StorageServiceModule } from 'angular-webstorage-service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('HomeComponent', () => {
@@ -15,15 +14,11 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [
-        { provide: SESSION_STORAGE, useValue: {} },
-      ],
       imports: [
         HttpClientModule,
         RouterTestingModule,
         FormsModule,
-        ReactiveFormsModule,
-        StorageServiceModule
+        ReactiveFormsModule
       ],
       declarations: [
         LogoComponent,
@@ -44,10 +39,5 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeDefined();
-  });
-
-  it('should remove itens from localstorage on ng init', () => {
-    component.ngOnInit();
-    expect(storageSpy).toHaveBeenCalledTimes(2);
   });
 });

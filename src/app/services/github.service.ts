@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GithubUser } from '../models/github-user.model';
+import { GithubUserRepositories } from '../models/github-user-repositories.model';
+import { GithubStoreService } from './githubStore.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class GithubService {
-
-  private profile: GithubUser;
 
   constructor (private http: HttpClient) {}
 

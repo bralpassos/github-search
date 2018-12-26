@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { GithubUser } from '../../models/github-user.model';
 import { GithubService } from '../../services/github.service';
-import { StorageService, SESSION_STORAGE } from 'angular-webstorage-service';
+import { GithubStoreService } from 'src/app/services/githubStore.service';
 
 @Component({
   selector: 'app-search',
@@ -23,12 +23,11 @@ export class SearchComponent {
     private router: Router,
     private formBuilder: FormBuilder,
     private githubService: GithubService,
-    @Inject(SESSION_STORAGE) private storage: StorageService
+    private githubStoreService: GithubStoreService
   ) { }
 
   searchGithubProfile() {
     this.loading = true;
-    this.removeLocalData();
     this.githubService.searchUser(this.form.value.username)
       .subscribe(
         (user: GithubUser) => {
@@ -39,7 +38,7 @@ export class SearchComponent {
   }
 
   searchUserRepostories(user: GithubUser) {
-    this.storage.set("github_user", user);
+    this.githubStoreService.saveUser(user);
     this.githubService.searchRepositories(this.form.value.username)
     .subscribe(
       (repositories) => this.showProfilePage(repositories),
@@ -49,17 +48,12 @@ export class SearchComponent {
 
   showProfilePage(repositories) {
     this.loading = false;
-    this.storage.set("github_repositories", repositories);
-    this.router.navigate(['/result', { user: this.form.value.username }]);
+    this.githubStoreService.saveRepo(repositories);
+    this.router.navigate(['/result']);
   }
 
   showErrorPage() {
     this.router.navigate(['/404']);
-  }
-
-  removeLocalData() {
-    this.storage.remove("github_user");
-    this.storage.remove("github_repositories");
   }
 
 }

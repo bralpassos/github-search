@@ -1,7 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GithubUser } from '../../models/github-user.model';
-import { SESSION_STORAGE, StorageService } from 'angular-webstorage-service';
 import { GithubUserRepositories } from 'src/app/models/github-user-repositories.model';
+import { GithubStoreService } from 'src/app/services/githubStore.service';
 
 @Component({
   selector: 'app-result',
@@ -14,11 +14,11 @@ export class ResultComponent implements OnInit {
   private user: GithubUser;
   private repositories: GithubUserRepositories;
 
-  constructor(@Inject(SESSION_STORAGE) private storage: StorageService) {  }
+  constructor(private githubStoreService: GithubStoreService) {  }
 
   ngOnInit() {
-    this.user = this.storage.get("github_user");
-    this.repositories = this.storage.get("github_repositories");
+    this.user = this.githubStoreService.getUser();
+    this.repositories = this.githubStoreService.getUserRepo();
   }
 
 }

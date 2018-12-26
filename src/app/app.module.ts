@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StorageServiceModule} from 'angular-webstorage-service';
 import { SearchComponent } from './components/search/search.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { UserRepositoriesComponent } from './components/user-repositories/user-repositories.component';
@@ -39,8 +38,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    StorageServiceModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

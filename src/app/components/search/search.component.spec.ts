@@ -4,7 +4,6 @@ import { SearchComponent } from './search.component';
 import { LoadingComponent } from '../loading/loading.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { SESSION_STORAGE } from 'angular-webstorage-service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -12,9 +11,6 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [
-        { provide: SESSION_STORAGE, useValue: {} },
-      ],
       imports: [
         HttpClientModule,
         RouterTestingModule,
@@ -48,12 +44,11 @@ describe('SearchComponent', () => {
   })
 
   describe('when call showProfilePage method', () => {
-    let repositoriesMock, component, storageSpy, navigateSpy;
+    let repositoriesMock, component, navigateSpy;
 
     beforeEach(() => {
       repositoriesMock = { test: true };
       component = fixture.componentInstance;
-      storageSpy = spyOn((<any>component).storage, 'set');
       navigateSpy = spyOn((<any>component).router, 'navigate');
       component.showProfilePage(repositoriesMock);
     });
@@ -62,11 +57,6 @@ describe('SearchComponent', () => {
       expect(component.loading).toBe(false);
     })
     
-    it('should save user repositories list on localstorage', () => {
-      component.showProfilePage(repositoriesMock);
-      expect(storageSpy).toHaveBeenCalledWith("github_repositories", repositoriesMock);
-    })
-
     it('should redirect to "/result" page', () => {
       component.showProfilePage(repositoriesMock);
       expect(navigateSpy).toHaveBeenCalledWith(['/result']);
