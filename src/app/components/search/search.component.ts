@@ -4,7 +4,6 @@ import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { GithubUser } from '../../models/github-user.model';
 import { GithubService } from '../../services/github.service';
 import { StorageService, SESSION_STORAGE } from 'angular-webstorage-service';
-import { GithubUserRepositories } from 'src/app/models/github-user-repositories.model';
 
 @Component({
   selector: 'app-search',

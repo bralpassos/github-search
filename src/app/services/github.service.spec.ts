@@ -9,6 +9,6 @@ describe('GithubService', () => {
   });
 
   it('should be created', inject([GithubService], (service: GithubService) => {
-    expect(service).toBeTruthy();
+    expect(service).toBeDefined();
   }));
 });
