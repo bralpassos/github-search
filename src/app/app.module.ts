@@ -10,6 +10,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { UserRepositoriesComponent } from './components/user-repositories/user-repositories.component';
 import { IconComponent } from './components/icon/icon.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { LoadingComponent } from './components/loading/loading.component';
 import { ResultComponent } from './pages/result/result.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
     LogoComponent,
     UserInfoComponent,
     UserRepositoriesComponent,
-    IconComponent
+    IconComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

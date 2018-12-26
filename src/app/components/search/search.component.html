@@ -1,3 +1,4 @@
+<app-loading *ngIf="loading"></app-loading>
 <form [formGroup]="form" (ngSubmit)="searchGithubProfile()" class="search">
   <input type="text" formControlName="username" />
   <button type="submit">
