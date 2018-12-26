@@ -6,7 +6,6 @@
 
     input {
         width: 600px;
-        height: 30x;
         padding: 5px 15px;
         border: 1px solid #ccc;
         border-radius: 1px;
@@ -21,5 +20,11 @@
         border-radius: 2px;
         background-color: $lighter-purple;
         cursor: pointer;
+    }
+}
+
+@media(max-width: 780px) {
+    .search input {
+        width: 100%;
     }
 }

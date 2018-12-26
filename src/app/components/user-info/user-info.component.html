@@ -3,7 +3,7 @@
 <p>{{ user.login }}</p>
 
 <ul>
-  <li class="user-stats" *ngIf="user.location.company">
+  <li class="user-stats" *ngIf="user.location.company != ''">
     <app-icon name="organization"></app-icon>
     <span>{{ user.company }}</span>
   </li>

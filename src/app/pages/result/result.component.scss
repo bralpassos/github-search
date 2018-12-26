@@ -26,3 +26,19 @@ main {
         margin-top: 1em;
     }
 }
+
+@media(max-width: 1090px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media(max-width: 780px) {
+    .result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
